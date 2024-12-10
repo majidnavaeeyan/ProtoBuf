@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+option csharp_namespace = "ProtoBuf";
+
+package employee;
+
+// The greeting service definition.
+service EmployeeCrud {
+  // Sends a greeting
+  rpc Insert (InsertRequest) returns (InsertReply);
+  rpc Update (UpdateRequest) returns (UpdateReply);
+  rpc Delete (DeleteRequest) returns (DeleteReply);
+  rpc Get (GetRequest) returns (GetReply);
+}
+
+// The request message containing the user's name.
+message InsertRequest {
+  string FirstName =1;
+  string LastName = 2;
+  string NationalCode = 3;
+  string BirthDate = 4;
+}
+
+// The response message containing the greetings.
+message InsertReply {
+  string Id = 1;
+}
+
+// The request message containing the user's name.
+message UpdateRequest {
+  string Id = 1;
+  string FirstName =2;
+  string LastName = 3;
+  string NationalCode = 4;
+  string BirthDate = 5;
+}
+
+// The response message containing the greetings.
+message UpdateReply {
+  string Id = 1;
+}
+
+// The request message containing the user's name.
+message DeleteRequest {
+  string Id =1;
+}
+
+// The response message containing the greetings.
+message DeleteReply {
+  string Id = 1;
+}
+
+// The request message containing the user's name.
+message GetRequest {
+	string Id = 1;
+}
+
+// The response message containing the greetings.
+message GetReply {
+  string Id=1;
+  string FirstName =2;
+  string LastName = 3;
+  string NationalCode = 4;
+  string BirthDate = 5;
+}
